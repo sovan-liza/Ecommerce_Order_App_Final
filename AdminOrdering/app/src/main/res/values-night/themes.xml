@@ -1,0 +1,4 @@
+<resources>
+    <style name="Theme.AdminOrdering"
+        parent="Theme.MaterialComponents.DayNight.NoActionBar"/>
+</resources>

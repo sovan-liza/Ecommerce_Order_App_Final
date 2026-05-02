@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <!-- ================= HOME ================= -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.ordering1.fragment.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_profile2"
+            app:destination="@id/profile2" />
+
+    </fragment>
+
+    <!-- ================= SEARCH ================= -->
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.ordering1.fragment.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search">
+
+        <action
+            android:id="@+id/action_searchFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+    </fragment>
+
+    <!-- ================= CATEGORY (FIXED) ================= -->
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.ordering1.categoryFragment"
+        android:label="Category"
+        tools:layout="@layout/fragment_category">
+
+        <!-- BACK TO HOME -->
+        <action
+            android:id="@+id/action_categoryFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+        <!-- SEARCH (THIS FIXES YOUR ERROR) -->
+        <action
+            android:id="@+id/action_categoryFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+
+    </fragment>
+
+    <!-- ================= PROFILE ================= -->
+    <fragment
+        android:id="@+id/profile2"
+        android:name="com.example.ordering1.fragment.Profile"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
+
+        <action
+            android:id="@+id/action_profile2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+    </fragment>
+
+</navigation>

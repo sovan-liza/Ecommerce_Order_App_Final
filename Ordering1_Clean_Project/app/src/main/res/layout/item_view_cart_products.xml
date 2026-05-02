@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <!-- Product Image -->
+        <ImageView
+            android:id="@+id/ivProductImage"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_see_all"
+            android:padding="4dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/pepsi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <!-- Product Title -->
+        <TextView
+            android:id="@+id/tvProductTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pepsi Cola"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@id/ivProductImage"
+            app:layout_constraintEnd_toStartOf="@id/llProductCount"
+            app:layout_constraintTop_toTopOf="@id/ivProductImage"
+            android:layout_marginStart="8dp"/>
+
+        <!-- Quantity -->
+        <TextView
+            android:id="@+id/tvProductQuantity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="200ml"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvProductTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvProductTitle"
+            app:layout_constraintEnd_toStartOf="@id/llProductCount"/>
+
+        <!-- Price -->
+        <TextView
+            android:id="@+id/tvProductPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="$2"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tvProductTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvProductQuantity"
+            app:layout_constraintEnd_toStartOf="@id/llProductCount"/>
+
+        <!-- ✅ ITEM TOTAL -->
+        <TextView
+            android:id="@+id/tvItemTotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Total: $2"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tvProductTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvProductPrice"
+            app:layout_constraintEnd_toStartOf="@id/llProductCount"/>
+
+        <!-- Product Count -->
+        <LinearLayout
+            android:id="@+id/llProductCount"
+            android:layout_width="60dp"
+            android:layout_height="32dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/bg_product_count"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tvProductCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
